@@ -1,0 +1,57 @@
+/* Set default font and background color */
+.root {
+    -fx-font-family: "Arial", sans-serif;
+    -fx-background-color: #f2f2f2;
+}
+
+/* Style labels */
+.label {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+#MazeAppLabel {
+    -fx-font-size: 24px; /* Increase the font size to make it bigger */
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+/* Style text fields */
+.text-field {
+    -fx-prompt-text-fill: #999999;
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1px;
+}
+
+.text-field:focused {
+    -fx-border-color: #3399ff;
+}
+
+/* Style buttons */
+.button {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #3399ff;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #3399ff;
+    -fx-border-width: 1px;
+
+    /* Set fixed width and height */
+    -fx-min-width: 80px;
+    -fx-min-height: 30px;
+}
+
+.button:hover {
+    -fx-background-color: #2679d3;
+    -fx-border-color: #2679d3;
+}
+
+.button:pressed {
+    -fx-background-color: #1a5ca0;
+    -fx-border-color: #1a5ca0;
+}

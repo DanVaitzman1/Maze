@@ -1,0 +1,26 @@
+/* help.css */
+
+VBox {
+    -fx-background-color: #f0f0f0;
+}
+
+Label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+Button {
+    -fx-font-size: 14px;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #007bff;
+}
+
+Button:hover {
+    -fx-background-color: #0056b3;
+}
+
+Button:pressed {
+    -fx-background-color: #003366;
+}
+

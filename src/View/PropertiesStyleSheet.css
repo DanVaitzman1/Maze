@@ -1,0 +1,62 @@
+#pane {
+    background-color: #f0f0f0;
+}
+
+#vBoxGeneration {
+    margin: 10px;
+}
+#vBoxGenration CheckBox {
+    -fx-padding: 5px;
+}
+
+#vBoxSearching {
+    margin: 10px;
+}
+#vBoxSeraching CheckBox {
+    -fx-padding: 5px;
+}
+
+#vBoxPoolSize {
+    margin: 10px;
+}
+Label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+        -fx-padding: 8px;
+}
+
+Button {
+    -fx-font-size: 14px;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #007bff;
+}
+
+Button:hover {
+    -fx-background-color: #0056b3;
+}
+
+Button:pressed {
+    -fx-background-color: #003366;
+}
+#paneLabel {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.checkBox {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-padding: 5px;
+}
+
+.spinner {
+    -fx-font-size: 14px;
+    -fx-padding: 5px;
+}
+
+.alert {
+    -fx-font-size: 14px;
+}
