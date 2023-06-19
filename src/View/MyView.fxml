@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane onKeyPressed="#KeyPressed" prefHeight="750.0" prefWidth="850.0" stylesheets="@/View/MainStyle.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MyViewController">
+<BorderPane onKeyPressed="#KeyPressed" onMouseDragged="#MouseDragged" prefHeight="750.0" prefWidth="850.0" stylesheets="@/View/MainStyle.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MyViewController">
    <top>
       <MenuBar prefHeight="26.0" prefWidth="850.0" BorderPane.alignment="CENTER">
         <menus>
@@ -166,7 +166,7 @@
             <Insets bottom="3.0" left="3.0" right="5.0" />
          </BorderPane.margin>
          <children>
-            <MazeDisplayer fx:id="mazeDisplayer" blendMode="DARKEN" height="${MazePane.height}" onMouseClicked="#mouseClicked" width="${MazePane.width}" />
+            <MazeDisplayer fx:id="mazeDisplayer" blendMode="DARKEN" height="${MazePane.height}" onMouseClicked="#mouseClicked" onMouseDragged="#MouseDragged" width="${MazePane.width}" />
          </children>
       </Pane>
    </center>

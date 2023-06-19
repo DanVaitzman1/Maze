@@ -15,16 +15,19 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.image.Image;
 import java.io.*;
+import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.Optional;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.stage.Window;
 
 
 public class MyViewController implements IView, Observer {
@@ -209,9 +212,10 @@ public class MyViewController implements IView, Observer {
         confirmationDialog.getButtonTypes().setAll(solveButton, cancelButton);
         Optional<ButtonType> confirmationResult = confirmationDialog.showAndWait();
         if (confirmationResult.isPresent() && confirmationResult.get() == solveButton) {
-            if (inGameMediaPlayer != null && inGameMediaPlayer.getStatus() == MediaPlayer.Status.PLAYING) {inGameMediaPlayer.stop();}inSolutionMediaPlayer.play();
-            int[][] sol = viewModel.solve(this.viewModel, this.viewModel.getPositionRow(), this.viewModel.getPositionCol(), "generateSolution");
-            mazeDisplayer.setSolution(sol);
+            if (inGameMediaPlayer != null && inGameMediaPlayer.getStatus() == MediaPlayer.Status.PLAYING) {inGameMediaPlayer.stop();}
+            inSolutionMediaPlayer.play();
+            int[][] solution = viewModel.solve(this.viewModel, this.viewModel.getPositionRow(), this.viewModel.getPositionCol(), "generateSolution");
+            mazeDisplayer.setSolution(solution);
             mazeDisplayer.isSolved(true);
             mazeDisplayer.setMaze(temp);
             solveMazeButton.setVisible(false);
@@ -221,18 +225,34 @@ public class MyViewController implements IView, Observer {
             ButtonType cancelButton2 = new ButtonType("Cancel");
             createMazeDialog.getButtonTypes().setAll(createButton, cancelButton2);
             Optional<ButtonType> createMazeResult = createMazeDialog.showAndWait();
-            if (createMazeResult.isPresent() && createMazeResult.get() == createButton) {createMazeAction();}}
+            if (createMazeResult.isPresent() && createMazeResult.get() == createButton) {createMazeAction();}
+            else {
+                if (inSolutionMediaPlayer != null && inSolutionMediaPlayer.getStatus() == MediaPlayer.Status.PLAYING) {inSolutionMediaPlayer.stop();}
+                inGameMediaPlayer.play();
+            }
+        }
     }
     @FXML
     public void loadMazeAction() {
         FileChooser chooseFile = new FileChooser();
         chooseFile.setTitle("Open Loaded Maze");
         File filePath = new File("resources/MazesFile");
-        if (filePath.exists() && isDirectoryEmpty(filePath)) {showAlertDialog("No Mazes Found !","Sorry, but we currently have no saved mazes...",null);return;}
+        if (filePath.exists() && isDirectoryEmpty(filePath)) {
+            showAlertDialog("No Mazes Found !","Sorry, but we currently have no saved mazes...",null);
+            return;}
         chooseFile.setInitialDirectory(filePath);
         Stage stage = (Stage) mazeDisplayer.getScene().getWindow();
         File file = chooseFile.showOpenDialog(stage);
-        if (file != null && file.exists() && !file.isDirectory()) {viewModel.load(file);mazeDisplayer.drawMaze();}
+        if (file != null && file.exists() && !file.isDirectory()) {
+            solveMazeButton.setVisible(true);
+            hintButton.setVisible(true);
+            saveMazeButton.setVisible(true);
+            viewModel.load(file);
+            mazeDisplayer.drawMaze();
+            if (inGameMediaPlayer != null && inGameMediaPlayer.getStatus() == MediaPlayer.Status.PLAYING) {inGameMediaPlayer.stop();}
+            if (inSolutionMediaPlayer != null && inSolutionMediaPlayer.getStatus() == MediaPlayer.Status.PLAYING) {inSolutionMediaPlayer.stop();}
+            inGameMediaPlayer.play();
+        }
     }
     @FXML
     public void saveMazeAction() {
@@ -248,11 +268,11 @@ public class MyViewController implements IView, Observer {
     @FXML
     public void hintAction()
     {
-        int[][] maze = viewModel.getMaze();
+        int[][] currMaze = viewModel.getMaze();
         int [][] solution =viewModel.solve(this.viewModel, this.viewModel.getPositionRow(), this.viewModel.getPositionCol(), "generateHint");
         mazeDisplayer.setSolution(solution);
         mazeDisplayer.isSolved(true);
-        mazeDisplayer.setMaze(maze);
+        mazeDisplayer.setMaze(currMaze);
         solveMazeButton.setVisible(true);
     }
     @FXML
@@ -279,7 +299,6 @@ public class MyViewController implements IView, Observer {
             if (inGameMediaPlayer != null && inGameMediaPlayer.getStatus() == MediaPlayer.Status.PLAYING) {inGameMediaPlayer.stop();}
             if (inSolutionMediaPlayer != null && inSolutionMediaPlayer.getStatus() == MediaPlayer.Status.PLAYING) {inSolutionMediaPlayer.stop();}
         }
-
     }
     /**
         /////////////// Help functions ///////////
@@ -308,24 +327,20 @@ public class MyViewController implements IView, Observer {
         alert.getDialogPane().lookupButton(ButtonType.CLOSE).addEventFilter(ActionEvent.ACTION, event -> {
                 if (inGameMediaPlayer != null && inGameMediaPlayer.getStatus() == MediaPlayer.Status.PLAYING) {inGameMediaPlayer.stop();}
                 if (inSolutionMediaPlayer != null && inSolutionMediaPlayer.getStatus() == MediaPlayer.Status.PLAYING) {inSolutionMediaPlayer.stop();}
-            }
-
-        );
+            });
     }
     public void KeyPressed(KeyEvent key) { viewModel.move(key.getCode()); key.consume();}
+    public void MouseDragged(MouseEvent event) {
+        if (mazeAlreadyCreated) {
+            viewModel.mouseMove(event, mazeDisplayer.getWidth(), mazeDisplayer.getHeight());
+            event.consume();}
+    }
     public void setResizeEvent(Scene scene) {
         scene.widthProperty().addListener((observableValue, oldSceneWidth, newSceneWidth) -> mazeDisplayer.drawMaze());
         scene.heightProperty().addListener((observableValue, oldSceneHeight, newSceneHeight) -> mazeDisplayer.drawMaze());}
     private boolean isDirectoryEmpty(File directory) {File[] files = directory.listFiles();return files != null && files.length == 0;}
     public void setCreatedOrNot(boolean createOrNot) {mazeAlreadyCreated = createOrNot;}
     public boolean getCreatedOrNot() {return mazeAlreadyCreated;}
-//    @FXML
     public void mouseClicked() {this.mazeDisplayer.requestFocus();}
     private int parseIntegerOrDefault(String value) {try {return Integer.parseInt(value);} catch (NumberFormatException e) {return 0;}}
-//    public void stopSound() {
-//        if (inGameMediaPlayer != null) {
-//            inGameMediaPlayer.stop();
-//            inGameMediaPlayer.dispose();
-//        }
-//    }
 }

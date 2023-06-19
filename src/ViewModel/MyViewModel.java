@@ -1,11 +1,10 @@
 package ViewModel;
-
 import Model.IModel;
 import algorithms.mazeGenerators.Position;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.input.KeyCode;
-
+import javafx.scene.input.MouseEvent;
 import java.io.File;
 import java.util.Observable;
 import java.util.Observer;
@@ -23,6 +22,7 @@ public class MyViewModel extends Observable implements Observer {
     }
     public int[][] generateMaze(int row, int col) {return model.generateMaze(row,col);}
     public void move(KeyCode movement) {model.move(movement);}
+    public void mouseMove(MouseEvent event,double cellWidth1,double cellHeight1){model.mouseMove(event,cellWidth1,cellHeight1);}
     public int [][] solve(MyViewModel m, int charRow, int charCol, String hintOrSolution) {return model.solve(m,charRow,charCol,hintOrSolution);}
     public void save(File file) {
         model.save(file);
