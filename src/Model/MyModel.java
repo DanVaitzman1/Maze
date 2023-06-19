@@ -145,6 +145,7 @@ public class MyModel extends Observable implements IModel
         searchServer.stop();
         return solutionPath;
     }
+
     private void copyMaze(Maze toCopyMaze)
     {
         int row = toCopyMaze.getNumRows(),col = toCopyMaze.getNumColumns();
