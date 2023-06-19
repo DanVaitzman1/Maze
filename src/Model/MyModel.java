@@ -158,6 +158,7 @@ public class MyModel extends Observable implements IModel
             case UP: case DIGIT8: case NUMPAD8:
                 if (isValidMove(row - 1, col))
                     this.currRow--;
+
                 break;
             case DOWN: case DIGIT2: case NUMPAD2:
                 if (isValidMove(row + 1, col))
