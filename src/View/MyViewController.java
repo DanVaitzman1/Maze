@@ -21,15 +21,11 @@ import javafx.stage.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.image.Image;
 import java.io.*;
-import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.Optional;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.stage.Window;
-
-
 public class MyViewController implements IView, Observer {
     private MyViewModel viewModel = new MyViewModel(new MyModel());
     public MazeDisplayer mazeDisplayer = new MazeDisplayer();

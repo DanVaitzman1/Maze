@@ -1354,3 +1354,83 @@
 2023.06.19 17:15:03 INFO  Model.MyModel - Server.Server@42a1a4f8 Client accepted: Client.Client@7b91756e
 2023.06.19 17:15:03 INFO  Model.MyModel - Client.Client@7b91756e Has requested a hint 
 2023.06.19 17:15:03 INFO  Model.MyModel - Server.Server@42a1a4f8 Stopping server...
+2023.06.19 17:36:07 INFO  Model.MyModel - Server.Server@3fefa2e Starting server at port = 5400
+2023.06.19 17:36:07 INFO  Model.MyModel - Server.Server@3fefa2e Client accepted: Client.Client@2dd99cb1
+2023.06.19 17:36:07 INFO  Model.MyModel - Client.Client@2dd99cb1 Generated a new maze with 10 rows and 10 cols
+2023.06.19 17:36:07 INFO  Model.MyModel - Server.Server@3fefa2e Stopping server...
+2023.06.19 17:38:28 INFO  Model.MyModel - Server.Server@2ebf815e Starting server at port = 5400
+2023.06.19 17:38:28 INFO  Model.MyModel - Server.Server@2ebf815e Client accepted: Client.Client@3e2a8f36
+2023.06.19 17:38:28 INFO  Model.MyModel - Client.Client@3e2a8f36 Generated a new maze with 10 rows and 10 cols
+2023.06.19 17:38:28 INFO  Model.MyModel - Server.Server@2ebf815e Stopping server...
+2023.06.19 17:38:59 INFO  Model.MyModel - Server.Server@739f76c0 Starting server at port = 5401
+2023.06.19 17:38:59 INFO  Model.MyModel - Server.Server@739f76c0 Client accepted: Client.Client@ab1b801
+2023.06.19 17:38:59 INFO  Model.MyModel - Client.Client@ab1b801 Has requested a hint 
+2023.06.19 17:38:59 INFO  Model.MyModel - Server.Server@739f76c0 Stopping server...
+2023.06.19 17:39:06 INFO  Model.MyModel - Server.Server@263b2d16 Starting server at port = 5401
+2023.06.19 17:39:06 INFO  Model.MyModel - Server.Server@263b2d16 Client accepted: Client.Client@4f195844
+2023.06.19 17:39:06 INFO  Model.MyModel - Client.Client@4f195844 Has requested a hint 
+2023.06.19 17:39:06 INFO  Model.MyModel - Server.Server@263b2d16 Stopping server...
+2023.06.19 17:39:12 INFO  Model.MyModel - Server.Server@5d66ec3e Starting server at port = 5401
+2023.06.19 17:39:13 INFO  Model.MyModel - Server.Server@5d66ec3e Client accepted: Client.Client@73f85781
+2023.06.19 17:39:13 INFO  Model.MyModel - Client.Client@73f85781 Has requested a solution, maze solved with DepthFirstSearch algorithm
+2023.06.19 17:39:13 INFO  Model.MyModel - Server.Server@5d66ec3e Stopping server...
+2023.06.19 17:41:03 INFO  Model.MyModel - Server.Server@2f39606b Starting server at port = 5400
+2023.06.19 17:41:03 INFO  Model.MyModel - Server.Server@2f39606b Client accepted: Client.Client@7707ddbf
+2023.06.19 17:41:03 INFO  Model.MyModel - Client.Client@7707ddbf Generated a new maze with 10 rows and 10 cols
+2023.06.19 17:41:03 INFO  Model.MyModel - Server.Server@2f39606b Stopping server...
+2023.06.19 17:41:20 INFO  Model.MyModel - Server.Server@1b0f4e67 Starting server at port = 5401
+2023.06.19 17:41:20 INFO  Model.MyModel - Server.Server@1b0f4e67 Client accepted: Client.Client@60dd3329
+2023.06.19 17:41:20 INFO  Model.MyModel - Client.Client@60dd3329 Has requested a hint 
+2023.06.19 17:41:20 INFO  Model.MyModel - Server.Server@1b0f4e67 Stopping server...
+2023.06.19 17:41:30 INFO  Model.MyModel - Server.Server@42041808 Starting server at port = 5401
+2023.06.19 17:41:30 INFO  Model.MyModel - Server.Server@42041808 Client accepted: Client.Client@46693ecb
+2023.06.19 17:41:30 INFO  Model.MyModel - Client.Client@46693ecb Has requested a hint 
+2023.06.19 17:41:30 INFO  Model.MyModel - Server.Server@42041808 Stopping server...
+2023.06.19 17:42:37 INFO  Model.MyModel - Server.Server@549d90bb Starting server at port = 5401
+2023.06.19 17:42:37 INFO  Model.MyModel - Server.Server@549d90bb Client accepted: Client.Client@71a7569d
+2023.06.19 17:42:37 INFO  Model.MyModel - Client.Client@71a7569d Has requested a hint 
+2023.06.19 17:42:37 INFO  Model.MyModel - Server.Server@549d90bb Stopping server...
+2023.06.19 17:42:57 INFO  Model.MyModel - Server.Server@156e388b Starting server at port = 5401
+2023.06.19 17:42:57 INFO  Model.MyModel - Server.Server@156e388b Client accepted: Client.Client@6ab8778a
+2023.06.19 17:42:57 INFO  Model.MyModel - Client.Client@6ab8778a Has requested a hint 
+2023.06.19 17:42:57 INFO  Model.MyModel - Server.Server@156e388b Stopping server...
+2023.06.19 17:44:49 INFO  Model.MyModel - Server.Server@527b4bb1 Starting server at port = 5400
+2023.06.19 17:44:49 INFO  Model.MyModel - Server.Server@527b4bb1 Client accepted: Client.Client@4b578275
+2023.06.19 17:44:49 INFO  Model.MyModel - Client.Client@4b578275 Generated a new maze with 10 rows and 10 cols
+2023.06.19 17:44:49 INFO  Model.MyModel - Server.Server@527b4bb1 Stopping server...
+2023.06.20 18:22:43 INFO  Model.MyModel - Server.Server@307a62de Starting server at port = 5400
+2023.06.20 18:22:43 INFO  Model.MyModel - Server.Server@307a62de Client accepted: Client.Client@5887cfe0
+2023.06.20 18:22:43 INFO  Model.MyModel - Client.Client@5887cfe0 Generated a new maze with 15 rows and 15 cols
+2023.06.20 18:22:43 INFO  Model.MyModel - Server.Server@307a62de Stopping server...
+2023.06.20 18:22:58 INFO  Model.MyModel - Server.Server@46a7654d Starting server at port = 5401
+2023.06.20 18:22:58 INFO  Model.MyModel - Server.Server@46a7654d Client accepted: Client.Client@50346658
+2023.06.20 18:22:58 INFO  Model.MyModel - Client.Client@50346658 Has requested a hint 
+2023.06.20 18:22:58 INFO  Model.MyModel - Server.Server@46a7654d Stopping server...
+2023.06.20 18:23:02 INFO  Model.MyModel - Server.Server@486c7ecf Starting server at port = 5401
+2023.06.20 18:23:02 INFO  Model.MyModel - Server.Server@486c7ecf Client accepted: Client.Client@3429d782
+2023.06.20 18:23:02 INFO  Model.MyModel - Client.Client@3429d782 Has requested a hint 
+2023.06.20 18:23:02 INFO  Model.MyModel - Server.Server@486c7ecf Stopping server...
+2023.06.20 18:23:09 INFO  Model.MyModel - Server.Server@6c07f1a8 Starting server at port = 5401
+2023.06.20 18:23:09 INFO  Model.MyModel - Server.Server@6c07f1a8 Client accepted: Client.Client@26dc07c9
+2023.06.20 18:23:09 INFO  Model.MyModel - Client.Client@26dc07c9 Has requested a hint 
+2023.06.20 18:23:09 INFO  Model.MyModel - Server.Server@6c07f1a8 Stopping server...
+2023.06.20 18:23:13 INFO  Model.MyModel - Server.Server@68243744 Starting server at port = 5401
+2023.06.20 18:23:13 INFO  Model.MyModel - Server.Server@68243744 Client accepted: Client.Client@5b8f8821
+2023.06.20 18:23:13 INFO  Model.MyModel - Client.Client@5b8f8821 Has requested a hint 
+2023.06.20 18:23:13 INFO  Model.MyModel - Server.Server@68243744 Stopping server...
+2023.06.20 18:23:17 INFO  Model.MyModel - Server.Server@d6c93cd Starting server at port = 5401
+2023.06.20 18:23:17 INFO  Model.MyModel - Server.Server@d6c93cd Client accepted: Client.Client@26a58b3e
+2023.06.20 18:23:17 INFO  Model.MyModel - Client.Client@26a58b3e Has requested a hint 
+2023.06.20 18:23:17 INFO  Model.MyModel - Server.Server@d6c93cd Stopping server...
+2023.06.20 18:23:21 INFO  Model.MyModel - Server.Server@3d0ddc37 Starting server at port = 5401
+2023.06.20 18:23:21 INFO  Model.MyModel - Server.Server@3d0ddc37 Client accepted: Client.Client@6ffe7c9c
+2023.06.20 18:23:21 INFO  Model.MyModel - Client.Client@6ffe7c9c Has requested a hint 
+2023.06.20 18:23:21 INFO  Model.MyModel - Server.Server@3d0ddc37 Stopping server...
+2023.06.20 18:23:29 INFO  Model.MyModel - Server.Server@40f7d83c Starting server at port = 5401
+2023.06.20 18:23:30 INFO  Model.MyModel - Server.Server@40f7d83c Client accepted: Client.Client@6e153b2f
+2023.06.20 18:23:30 INFO  Model.MyModel - Client.Client@6e153b2f Has requested a hint 
+2023.06.20 18:23:30 INFO  Model.MyModel - Server.Server@40f7d83c Stopping server...
+2023.06.20 18:23:34 INFO  Model.MyModel - Server.Server@7cd65e88 Starting server at port = 5401
+2023.06.20 18:23:34 INFO  Model.MyModel - Server.Server@7cd65e88 Client accepted: Client.Client@40e024ca
+2023.06.20 18:23:34 INFO  Model.MyModel - Client.Client@40e024ca Has requested a hint 
+2023.06.20 18:23:34 INFO  Model.MyModel - Server.Server@7cd65e88 Stopping server...

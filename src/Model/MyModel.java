@@ -18,7 +18,6 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Observable;
-
 import javafx.scene.input.MouseEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -120,7 +119,6 @@ public class MyModel extends Observable implements IModel
                                         && ((MazeState) (mazeSolutionSteps.get(i))).getPosition().getColumnIndex() == currCol)
                                 {
                                     pos = i+1;}
-
                             }
                             for (int i = 0; i < mazeSolutionSteps.size(); i++) {
                                 solutionPath[0][i] = ((MazeState)(mazeSolutionSteps.get(pos))).getPosition().getRowIndex();
@@ -158,7 +156,6 @@ public class MyModel extends Observable implements IModel
             case UP: case DIGIT8: case NUMPAD8:
                 if (isValidMove(row - 1, col))
                     this.currRow--;
-
                 break;
             case DOWN: case DIGIT2: case NUMPAD2:
                 if (isValidMove(row + 1, col))
@@ -209,111 +206,24 @@ public class MyModel extends Observable implements IModel
     }
     private double dragStartX; // Starting X-coordinate of the drag
     private double dragStartY; // Starting Y-coordinate of the drag
-//    @Override
-//    public void mouseMove(MouseEvent event)
-//    {
-//        if (event.getEventType() == MouseEvent.MOUSE_PRESSED) {
-//            // Store the starting coordinates of the drag
-//            dragStartX = event.getX();
-//            dragStartY = event.getY();
-//        } else if (event.getEventType() == MouseEvent.MOUSE_DRAGGED) {
-//            double mouseX = event.getX();
-//            double mouseY = event.getY();
-//
-//            // Calculate the difference between the starting and current coordinates
-//            double deltaX = mouseX - dragStartX;
-//            double deltaY = mouseY - dragStartY;
-//
-//            // Update the starting coordinates for the next drag event
-//            dragStartX = mouseX;
-//            dragStartY = mouseY;
-//
-//            // Determine the movement based on the difference in coordinates
-//            if (deltaX < 0 && deltaY < 0) {
-//                // Handle movement towards the top left direction
-//                if (isValidMove(currRow - 1, currCol - 1)) {
-//                    currRow--;
-//                    currCol--;
-//                }
-//            } else if (deltaX > 0 && deltaY < 0) {
-//                // Handle movement towards the top right direction
-//                if (isValidMove(currRow - 1, currCol + 1)) {
-//                    currRow--;
-//                    currCol++;
-//                }
-//            } else if (deltaX < 0 && deltaY > 0) {
-//                // Handle movement towards the bottom left direction
-//                if (isValidMove(currRow + 1, currCol - 1)) {
-//                    currRow++;
-//                    currCol--;
-//                }
-//            } else if (deltaX > 0 && deltaY > 0) {
-//                // Handle movement towards the bottom right direction
-//                if (isValidMove(currRow + 1, currCol + 1)) {
-//                    currRow++;
-//                    currCol++;
-//                }
-//            } else if (deltaX < 0) {
-//                // Handle movement towards the left direction
-//                if (isValidMove(currRow, currCol - 1)) {
-//                    currCol--;
-//                }
-//            } else if (deltaX > 0) {
-//                // Handle movement towards the right direction
-//                if (isValidMove(currRow, currCol + 1)) {
-//                    currCol++;
-//                }
-//            } else if (deltaY < 0) {
-//                // Handle movement upwards
-//                if (isValidMove(currRow - 1, currCol)) {
-//                    currRow--;
-//                }
-//            } else if (deltaY > 0) {
-//                // Handle movement downwards
-//                if (isValidMove(currRow + 1, currCol)) {
-//                    currRow++;
-//                }
-//            }
-//
-//            // Check if the goal position has been reached
-//            if (goalPosition.getColumnIndex() == getPositionCol() && goalPosition.getRowIndex() == getPositionRow()) {
-//                playerFinishTheGame = true;
-//            }
-//
-//            setChanged();
-//            notifyObservers();
-//        }
-//
-//
-//    }
-
 @Override
 public void mouseMove(MouseEvent event,double cellWidth1,double cellHeight1) {
     if (event.getEventType() == MouseEvent.MOUSE_PRESSED) {
-        // Store the starting coordinates of the drag
         dragStartX = event.getX();
         dragStartY = event.getY();
     } else if (event.getEventType() == MouseEvent.MOUSE_DRAGGED) {
         double mouseX = event.getX();
         double mouseY = event.getY();
-
-        // Calculate the cell size based on the dimensions of the grid
-        double cellWidth = cellWidth1 / maze[0].length; // Replace gridWidth with the actual width of the grid
-        double cellHeight = cellHeight1 / maze.length; // Replace gridHeight with the actual height of the grid
-
-        // Calculate the cell row and column based on the mouse coordinates
+        double cellWidth = cellWidth1 / maze[0].length;
+        double cellHeight = cellHeight1 / maze.length;
         int newCurrRow = (int) (mouseY / cellHeight);
         int newCurrCol = (int) (mouseX / cellWidth);
-
-        // Check if the new cell position is adjacent to the current cell position
         if (Math.abs(newCurrRow - currRow) <= 1 && Math.abs(newCurrCol - currCol) <= 1) {
-            // Check if the new cell position is a valid move
             if (isValidMove(newCurrRow, newCurrCol)) {
                 currRow = newCurrRow;
                 currCol = newCurrCol;
             }
         }
-        // Check if the goal position has been reached
         if (goalPosition.getColumnIndex() == getPositionCol() && goalPosition.getRowIndex() == getPositionRow()) {
             playerFinishTheGame = true;
         }
